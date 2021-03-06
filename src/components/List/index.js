@@ -1,45 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import ModalComp from '../Modal';
-import { useSelector, useDispatch } from 'react-redux';
-import { List, Button, Popconfirm, message, Row, Col } from 'antd';
+import ModalComp from '../Modal'
+import { useSelector, useDispatch } from 'react-redux'
+import { List, Button, Popconfirm, message, Row, Col } from 'antd'
+import moment from 'moment'
 
 const ListComp = (props) => {
-  const dispatch = useDispatch();
-  const todo = useSelector((state) => state.todo);
-  const [isVisible, setIsVisible] = useState(false);
-  const currentTopic = useSelector((state) => state.currentTopic);
-
+  const dispatch = useDispatch()
+  const todo = useSelector((state) => state.todo)
+  const [isVisible, setIsVisible] = useState(false)
+  const currentTopic = useSelector((state) => state.currentTopic)
+  useEffect(() => {
+    console.log('component changed')
+  })
   const handleDelete = (id) => {
     dispatch({
       type: 'DELETE_TODO',
       payload: id,
-    });
-    message.success('Click on Yes');
-  };
+    })
+    message.success('Click on Yes')
+  }
 
   const handleEdit = (item) => {
-    message.success('Succeed'); //*
+    message.success('Succeed') //*
     dispatch({
       type: 'ACTIVATE_TODO',
       payload: item.id,
-    });
+    })
     setTimeout(() => {
-      setIsVisible(true);
-    }, 500);
-  };
-
-  function cancel(e) {
-    console.log(e);
-    message.error('Canceled'); //*
+      setIsVisible(true)
+    }, 500)
   }
 
-  let newTodo = todo;
+  function cancel(e) {
+    console.log(e)
+    message.error('Canceled') //*
+  }
+  const func = (a, b) => {
+    return b.date - a.date
+  }
+  let newTodo = todo
 
   if (currentTopic !== 'all') {
     newTodo = todo.filter((t) => {
-      return t.topic === currentTopic;
-    });
+      return t.topic === currentTopic
+    })
   }
 
   return (
@@ -49,35 +54,35 @@ const ListComp = (props) => {
         <Col flex={2}>
           <List
             bordered
-            dataSource={newTodo}
+            dataSource={newTodo.sort(func)}
             renderItem={(item) => (
               <List.Item>
                 {item.text}
                 &nbsp;
-                {item.date}
+                {item.date !== 0 ? moment(item.date).format('ll') : ''}
                 &nbsp;
                 <Popconfirm
-                  title="Are you sure to edit this task?"
+                  title='Are you sure to edit this task?'
                   onConfirm={() => {
-                    handleEdit(item);
+                    handleEdit(item)
                   }}
                   onCancel={cancel}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button type="link">Edit</Button>
+                  <Button type='link'>Edit</Button>
                 </Popconfirm>
                 &nbsp;
                 <Popconfirm
-                  title="Are you sure to delete this task?"
+                  title='Are you sure to delete this task?'
                   onConfirm={() => {
-                    handleDelete(item.id);
+                    handleDelete(item.id)
                   }}
                   onCancel={cancel}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button type="link">Delete</Button>
+                  <Button type='link'>Delete</Button>
                 </Popconfirm>
               </List.Item>
             )}
@@ -85,7 +90,7 @@ const ListComp = (props) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default ListComp;
+export default ListComp

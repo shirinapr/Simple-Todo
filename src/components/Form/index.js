@@ -7,13 +7,17 @@ const FormComp = () => {
   const dispatch = useDispatch((store) => {
     return store.todo
   })
-  const [date, setDate] = useState('')
+  const [date, setDate] = useState(0)
   const [topic, setTopic] = useState('')
   const [form] = Form.useForm()
   const inputRef = React.useRef(null)
 
   function onChange(date, dateString) {
-    setDate(dateString)
+    if (date !== null) {
+      setDate(+new Date(date._d))
+    } else {
+      setDate(0)
+    }
   }
   let handleSelect = (value) => {
     setTopic(value)
@@ -22,10 +26,9 @@ const FormComp = () => {
     let todo = {
       id: shortId.generate(),
       text: e.todo,
+      date,
     }
-    if (date) {
-      todo.date = date
-    }
+
     if (topic) {
       todo.topic = topic
     }
@@ -68,7 +71,11 @@ const FormComp = () => {
               },
             ]}
           >
-            <Input placeholder='Enter your task' ref={inputRef} />
+            <Input
+              placeholder='Enter your task'
+              ref={inputRef}
+              autoComplete='off'
+            />
           </Form.Item>
           <Form.Item>
             <Button type='primary' htmlType='submit'>

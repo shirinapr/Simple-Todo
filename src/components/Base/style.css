@@ -4,11 +4,11 @@
   line-height: 64px;
   cursor: pointer;
   transition: color 0.3s;
-  background-color: rgb(255, 255, 255) !important;
+  background: transparent !important;
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
-  background-color: rgb(255, 255, 255) !important;
+  background: transparent !important;
 }
 
 #components-layout-demo-custom-trigger .logo {
@@ -17,7 +17,7 @@
 }
 
 .site-layout .site-layout-background {
-  background-color: rgb(255, 255, 255) !important;
+  background: transparent !important;
   font-size: 20px;
 }
 .trigger {
@@ -26,14 +26,14 @@
   font-size: 20px;
 }
 .sider {
-  background-color: rgb(255, 255, 255) !important;
+  background: transparent !important;
   height: 100vh !important;
 }
 .menu {
-  background-color: rgb(255, 255, 255) !important;
+  background: transparent !important;
 }
 .menuItem {
-  background-color: rgb(255, 255, 255) !important;
+  background: transparent !important;
 }
 .span-header {
   padding-left: 20px;
