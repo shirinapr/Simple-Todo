@@ -1,8 +1,12 @@
 body {
-  background: rgb(255, 195, 195);
-  background: linear-gradient(
-    349deg,
-    rgba(255, 195, 195, 1) 0%,
-    rgba(255, 255, 255, 1) 65%
-  ) !important;
+  background-image: url(../images/pink.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
+}
+
+.ant-layout {
+  background: transparent !important;
 }
