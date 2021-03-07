@@ -4,6 +4,8 @@ import ModalComp from '../Modal'
 import { useSelector, useDispatch } from 'react-redux'
 import { List, Button, Popconfirm, message, Row, Col } from 'antd'
 import moment from 'moment'
+import './style.css'
+
 
 const ListComp = (props) => {
   const dispatch = useDispatch()
@@ -53,6 +55,7 @@ const ListComp = (props) => {
       <Row>
         <Col flex={2}>
           <List
+            className="task-list"
             bordered
             dataSource={newTodo.sort(func)}
             renderItem={(item) => (
@@ -70,7 +73,7 @@ const ListComp = (props) => {
                   okText='Yes'
                   cancelText='No'
                 >
-                  <Button type='link'>Edit</Button>
+                  <Button type='link' className="task-btn">Edit</Button>
                 </Popconfirm>
                 &nbsp;
                 <Popconfirm
@@ -82,7 +85,7 @@ const ListComp = (props) => {
                   okText='Yes'
                   cancelText='No'
                 >
-                  <Button type='link'>Delete</Button>
+                  <Button type='link' className="task-btn">Delete</Button>
                 </Popconfirm>
               </List.Item>
             )}
