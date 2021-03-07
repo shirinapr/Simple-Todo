@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Input, Form, Button, DatePicker, Select, Row, Col } from 'antd'
 import shortId from 'shortid'
 import { useDispatch } from 'react-redux'
+import './style.css'
+
 
 const FormComp = () => {
   const dispatch = useDispatch((store) => {
@@ -41,47 +43,53 @@ const FormComp = () => {
   const { Option } = Select
   return (
     <Row>
-      <Col xl={12} sm={24}>
+      <Col xl={24} sm={24}>
         <Form onFinish={handleSubmit} name='basic' form={form}>
-          <Row>
-            <Col span={6} md={6} lg={6} xl={6}>
-              <Form.Item>
-                <Select
-                  showSearch
-                  placeholder='Topic'
-                  onSearch={handleSelect}
-                  onChange={handleSelect}
-                >
-                  <Option value='Short term'>Short term</Option>
-                  <Option value='Long term'>Long term</Option>
-                </Select>
+          <Row className="row-form">          
+            <Col xl={6} xs={10} sm={8}>
+              <Form.Item
+                className="txt-input"
+                name='todo'
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please fill input.',
+                  },
+                ]}
+              >
+                <Input
+                  placeholder='Enter your task'
+                  ref={inputRef}
+                  autoComplete='off'
+                />
               </Form.Item>
             </Col>
-            <Col span={6} offset={1}>
-              {' '}
-              <DatePicker onChange={onChange} />
-            </Col>
+              
+                <Col span={4} md={6} lg={6} xl={4} offset={1}>
+                  <Form.Item>
+                    <Select
+                      showSearch
+                      placeholder='Topic'
+                      onSearch={handleSelect}
+                      onChange={handleSelect}
+                    >
+                      <Option value='Short term'>Short term</Option>
+                      <Option value='Long term'>Long term</Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+                <Col span={4} offset={1} className="date-input" >
+                  {' '}
+                  <DatePicker onChange={onChange}  />
+                </Col>
+                <Col span={4} md={2 , {offset:0}} sm={{offset:1}} xs={{offset:1}}>
+                  <Form.Item>
+                    <Button type='primary' htmlType='submit' className="btn-sub">
+                      Submit
+                    </Button>
+                  </Form.Item>
+              </Col>
           </Row>
-          <Form.Item
-            name='todo'
-            rules={[
-              {
-                required: true,
-                message: 'Please fill input.',
-              },
-            ]}
-          >
-            <Input
-              placeholder='Enter your task'
-              ref={inputRef}
-              autoComplete='off'
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button type='primary' htmlType='submit'>
-              Submit
-            </Button>
-          </Form.Item>
         </Form>
       </Col>
     </Row>
