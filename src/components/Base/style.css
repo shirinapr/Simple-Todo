@@ -26,15 +26,32 @@
   font-size: 20px;
 }
 .sider {
-  background: transparent !important;
+  background: rgba(0, 0, 0, 0.3) !important;
   height: 100vh !important;
+  border-right: 0px solid rgba(0,0,0,0.1) !important;
+  box-shadow: 0px 0px 9px 0 rgba(0,0,0,0.1);
 }
 .menu {
   background: transparent !important;
 }
 .menuItem {
   background: transparent !important;
+  color:#fff;
 }
 .span-header {
   padding-left: 20px;
+  color: #fff;
+}
+
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+  border-right: none !important;
+}
+
+
+.ant-menu-item-selected {
+  color: rgb(186, 68, 255) !important;
+}
+
+.ant-menu-item-active {
+  color: rgb(186, 68, 255) !important;
 }
