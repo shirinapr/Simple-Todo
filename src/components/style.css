@@ -4,12 +4,8 @@ body {
   background-size: cover;
   background-position: center;
   /* -webkit-backdrop-filter: blur(50px); */
-  background: rgb(2, 205, 201);
-  background: linear-gradient(
-    180deg,
-    rgba(2, 205, 201, 1) 11%,
-    rgba(255, 255, 255, 0.9192051820728291) 93%
-  ) !important;
+  background: #fec89a;
+  background: #ffd7ba !important;
   /* backdrop-filter: blur(7px); */
 }
 
