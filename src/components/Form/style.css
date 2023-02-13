@@ -33,7 +33,7 @@
 }
 
 .ant-picker .ant-picker-input input[type='text'] {
-  background-color: rgb(255, 255, 255, 0.2) !important;
+  background-color: #ddb892 !important;
 }
 
 input::placeholder {
@@ -41,5 +41,5 @@ input::placeholder {
 }
 
 .ant-picker-input input::placeholder {
-  color: #ddd !important;
+  color: #7f5539 !important;
 }
