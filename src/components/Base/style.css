@@ -43,6 +43,9 @@
   color: #fff;
 }
 
+svg {
+  fill: white;
+}
 .ant-menu-inline,
 .ant-menu-vertical,
 .ant-menu-vertical-left {
@@ -50,16 +53,16 @@
 }
 
 .ant-menu-item-selected {
-  color: #00c6c1 !important;
+  color: rgb(41, 105, 105) !important;
 }
 
 .ant-menu-item-active {
-  color: #00c6c1 !important;
+  color: rgb(41, 105, 105) !important;
 }
 
 .ant-menu-vertical .ant-menu-item::after,
 .ant-menu-vertical-left .ant-menu-item::after,
 .ant-menu-vertical-right .ant-menu-item::after,
 .ant-menu-inline .ant-menu-item::after {
-  border-right: 3px solid #00c6c1 !important ;
+  border-right: 3px solid rgb(41, 105, 105) !important ;
 }
