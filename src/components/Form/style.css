@@ -1,41 +1,43 @@
 .btn-sub {
-  background-color: #9c6644 !important;
+  background-color: rgb(41, 105, 105) !important;
   border: none !important;
 }
 
 .btn-sub:hover {
-  background-color: #b08968 !important;
-  color: #7f5539 !important;
+  background-color: #d4d4d4 !important;
+  color: rgb(41, 105, 105) !important;
 }
 
 .row-form {
   padding: 20px;
 }
 
-.txt-input input[type="text"] {
-  background-color: #ddb892 !important;
-  border: solid 1px #b08968 !important;
-  color: #7f5539 !important;
+.txt-input input[type='text'] {
+  background-color: rgb(255, 255, 255, 0.2) !important;
+  border: solid 1px rgb(255, 255, 255, 0.3) !important;
+  color: rgb(41, 105, 105) !important;
 }
 
 .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-  background-color: #ddb892 !important;
-  border: solid 1px #b08968 !important;
-  color: #7f5539 !important;
+  background-color: rgb(255, 255, 255, 0.3) !important;
+  border: solid 1px rgba(255, 255, 255, 0.3) !important;
+  color: rgb(41, 105, 105) !important;
 }
-
+.ant-select-selection-search-input {
+  color: rgb(41, 105, 105) !important;
+}
 .date-input .ant-picker {
-  background: #ddb892 !important;
-  border: solid 1px #b08968 !important;
-  color: #7f5539 !important;
+  background: rgb(255, 255, 255, 0.2) !important;
+  border: solid 1px rgb(255, 255, 255, 0.3) !important;
+  color: rgb(41, 105, 105) !important;
 }
 
-.ant-picker .ant-picker-input input[type="text"] {
+.ant-picker .ant-picker-input input[type='text'] {
   background-color: #ddb892 !important;
 }
 
 input::placeholder {
-  color: #7f5539 !important;
+  color: rgb(41, 105, 105) !important;
 }
 
 .ant-picker-input input::placeholder {
