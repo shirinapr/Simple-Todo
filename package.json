@@ -34,11 +34,6 @@
     "dist": "npm run build && build",
     "postinstall": "install-app-deps"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
