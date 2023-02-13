@@ -1,11 +1,11 @@
 .btn-sub {
-  background-color: rgb(41, 105, 105) !important;
+  background-color: #00a59f !important;
   border: none !important;
 }
 
 .btn-sub:hover {
   background-color: #d4d4d4 !important;
-  color: rgb(41, 105, 105) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .row-form {
@@ -15,31 +15,29 @@
 .txt-input input[type='text'] {
   background-color: rgb(255, 255, 255, 0.2) !important;
   border: solid 1px rgb(255, 255, 255, 0.3) !important;
-  color: rgb(41, 105, 105) !important;
+  color: #fff !important;
 }
 
 .ant-select:not(.ant-select-customize-input) .ant-select-selector {
   background-color: rgb(255, 255, 255, 0.3) !important;
   border: solid 1px rgba(255, 255, 255, 0.3) !important;
-  color: rgb(41, 105, 105) !important;
+  color: rgb(255, 255, 255) !important;
 }
-.ant-select-selection-search-input {
-  color: rgb(41, 105, 105) !important;
-}
+
 .date-input .ant-picker {
   background: rgb(255, 255, 255, 0.2) !important;
   border: solid 1px rgb(255, 255, 255, 0.3) !important;
-  color: rgb(41, 105, 105) !important;
+  color: #fff !important;
 }
 
 .ant-picker .ant-picker-input input[type='text'] {
-  background-color: rgb(255, 255, 255, 0.2) !important;
+  background-color: #ddb892 !important;
 }
 
 input::placeholder {
-  color: rgb(41, 105, 105) !important;
+  color: #ddd !important;
 }
 
 .ant-picker-input input::placeholder {
-  color: #ddd !important;
+  color: #7f5539 !important;
 }
